@@ -44,7 +44,7 @@
                   "i128": "100"
                 },
                 {
-                  "bytes": "3ff5345382eb0e9ad6f79c2aff29cca87c15afc98cd43d93152496a061618131"
+                  "bytes": "87d3f27de4bbd4b17b0e8e84071863a7f2b8cfc4db573bd65edf858c82b3beab"
                 }
               ]
             }
@@ -159,7 +159,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "3ff5345382eb0e9ad6f79c2aff29cca87c15afc98cd43d93152496a061618131"
+                  "bytes": "87d3f27de4bbd4b17b0e8e84071863a7f2b8cfc4db573bd65edf858c82b3beab"
                 }
               ]
             },
@@ -179,7 +179,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "3ff5345382eb0e9ad6f79c2aff29cca87c15afc98cd43d93152496a061618131"
+                      "bytes": "87d3f27de4bbd4b17b0e8e84071863a7f2b8cfc4db573bd65edf858c82b3beab"
                     }
                   ]
                 },
@@ -233,18 +233,6 @@
                         "key": {
                           "vec": [
                             {
-                              "symbol": "DefaultBootstrapCredits"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "u32": 10
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
                               "symbol": "DeploymentSeq"
                             }
                           ]
@@ -286,7 +274,7 @@
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]

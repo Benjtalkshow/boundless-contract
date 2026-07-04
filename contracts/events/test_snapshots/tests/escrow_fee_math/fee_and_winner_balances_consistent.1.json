@@ -121,14 +121,6 @@
                   "map": [
                     {
                       "key": {
-                        "symbol": "application_credit_cost"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
                         "symbol": "content_uri"
                       },
                       "val": {
@@ -231,7 +223,7 @@
                   ]
                 },
                 {
-                  "bytes": "75b848bc5e3fcd68aaeaa7822c05762f8ce296ff5c03ef3869ad909bc328ce9c"
+                  "bytes": "0b3116862b3d1bfd5e5369ab62ffc1097281ee9bf1db9940ba9b3c01f66e62ed"
                 }
               ]
             }
@@ -302,7 +294,7 @@
                   "i128": "4000000000"
                 },
                 {
-                  "bytes": "deca80f4c126a1c47c94d457ab46da292d6089af9f05c9eacf6e8b3455eba3a9"
+                  "bytes": "e4c578e4d580c12ecbc9ba23c165cfe8e002f3d75318e95c6cd189bf3409237a"
                 }
               ]
             }
@@ -350,14 +342,6 @@
                       "map": [
                         {
                           "key": {
-                            "symbol": "credit_earn"
-                          },
-                          "val": {
-                            "u32": 10
-                          }
-                        },
-                        {
-                          "key": {
                             "symbol": "position"
                           },
                           "val": {
@@ -385,7 +369,7 @@
                   ]
                 },
                 {
-                  "bytes": "764d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                  "bytes": "52765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                 }
               ]
             }
@@ -563,7 +547,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "974d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                  "bytes": "83765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                 }
               ]
             },
@@ -583,7 +567,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "974d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                      "bytes": "83765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                     }
                   ]
                 },
@@ -608,7 +592,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "a74d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                  "bytes": "b3765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                 }
               ]
             },
@@ -628,7 +612,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "a74d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                      "bytes": "b3765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                     }
                   ]
                 },
@@ -653,7 +637,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "b54d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                  "bytes": "e2765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                 }
               ]
             },
@@ -673,52 +657,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "b54d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
-                    }
-                  ]
-                },
-                "durability": "temporary",
-                "val": {
-                  "bool": true
-                }
-              }
-            },
-            "ext": "v0"
-          },
-          15
-        ]
-      ],
-      [
-        {
-          "contract_data": {
-            "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4",
-            "key": {
-              "vec": [
-                {
-                  "symbol": "OpSeen"
-                },
-                {
-                  "bytes": "c64d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
-                }
-              ]
-            },
-            "durability": "temporary"
-          }
-        },
-        [
-          {
-            "last_modified_ledger_seq": 0,
-            "data": {
-              "contract_data": {
-                "ext": "v0",
-                "contract": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFCT4",
-                "key": {
-                  "vec": [
-                    {
-                      "symbol": "OpSeen"
-                    },
-                    {
-                      "bytes": "c64d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                      "bytes": "e2765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                     }
                   ]
                 },
@@ -780,14 +719,6 @@
                     },
                     {
                       "key": {
-                        "symbol": "credits"
-                      },
-                      "val": {
-                        "u32": 20
-                      }
-                    },
-                    {
-                      "key": {
                         "symbol": "reputation"
                       },
                       "val": {
@@ -842,18 +773,6 @@
                         "key": {
                           "vec": [
                             {
-                              "symbol": "DefaultBootstrapCredits"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "u32": 10
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
                               "symbol": "DeploymentSeq"
                             }
                           ]
@@ -895,7 +814,7 @@
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]
@@ -1176,14 +1095,6 @@
                 "durability": "persistent",
                 "val": {
                   "map": [
-                    {
-                      "key": {
-                        "symbol": "application_credit_cost"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
                     {
                       "key": {
                         "symbol": "content_uri"
@@ -1469,7 +1380,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "75b848bc5e3fcd68aaeaa7822c05762f8ce296ff5c03ef3869ad909bc328ce9c"
+                  "bytes": "0b3116862b3d1bfd5e5369ab62ffc1097281ee9bf1db9940ba9b3c01f66e62ed"
                 }
               ]
             },
@@ -1489,7 +1400,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "75b848bc5e3fcd68aaeaa7822c05762f8ce296ff5c03ef3869ad909bc328ce9c"
+                      "bytes": "0b3116862b3d1bfd5e5369ab62ffc1097281ee9bf1db9940ba9b3c01f66e62ed"
                     }
                   ]
                 },
@@ -1514,7 +1425,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "764d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                  "bytes": "52765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                 }
               ]
             },
@@ -1534,7 +1445,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "764d6d6513addc008ccd281f7297c1ac3963106f08353cc0af8bc0b7d67647ce"
+                      "bytes": "52765372a9db3dd8d9c9e32d917d8edcfa8df53add0629b2b6361c347c1c255c"
                     }
                   ]
                 },
@@ -1559,7 +1470,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "deca80f4c126a1c47c94d457ab46da292d6089af9f05c9eacf6e8b3455eba3a9"
+                  "bytes": "e4c578e4d580c12ecbc9ba23c165cfe8e002f3d75318e95c6cd189bf3409237a"
                 }
               ]
             },
@@ -1579,7 +1490,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "deca80f4c126a1c47c94d457ab46da292d6089af9f05c9eacf6e8b3455eba3a9"
+                      "bytes": "e4c578e4d580c12ecbc9ba23c165cfe8e002f3d75318e95c6cd189bf3409237a"
                     }
                   ]
                 },
@@ -1720,12 +1631,54 @@
                         "key": {
                           "vec": [
                             {
+                              "symbol": "SupportedTokenAt"
+                            },
+                            {
+                              "u32": 0
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CDS3FDGQ4JA2V3F26Y4BMWWJEC5TT26RJBN7KIQKUMVO2MAOCMDTSZ7A"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "SupportedTokenCount"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "u32": 1
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "SupportedTokenSlot"
+                            },
+                            {
+                              "address": "CDS3FDGQ4JA2V3F26Y4BMWWJEC5TT26RJBN7KIQKUMVO2MAOCMDTSZ7A"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "u32": 1
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
                               "symbol": "Version"
                             }
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]

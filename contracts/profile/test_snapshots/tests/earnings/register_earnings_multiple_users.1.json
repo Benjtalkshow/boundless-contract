@@ -44,7 +44,7 @@
                   "i128": "100"
                 },
                 {
-                  "bytes": "b9f02698b5067bfb6ab9953ae6cd95048a867ec694f3f92f751b3c31763d3d33"
+                  "bytes": "4eeabccced6cc1f7f39324b30972a6b823c464cc377549806a72809d8efc0f03"
                 }
               ]
             }
@@ -72,7 +72,7 @@
                   "i128": "200"
                 },
                 {
-                  "bytes": "dc6b98c7c1b854a7e6a208df7d74e6e4d065f18fde529836a52580b809d77307"
+                  "bytes": "e7db79ace5de1df762e0eb81212019b7a1b667d6f1fcfb36dae58bc6b71c5287"
                 }
               ]
             }
@@ -239,7 +239,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "b9f02698b5067bfb6ab9953ae6cd95048a867ec694f3f92f751b3c31763d3d33"
+                  "bytes": "4eeabccced6cc1f7f39324b30972a6b823c464cc377549806a72809d8efc0f03"
                 }
               ]
             },
@@ -259,7 +259,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "b9f02698b5067bfb6ab9953ae6cd95048a867ec694f3f92f751b3c31763d3d33"
+                      "bytes": "4eeabccced6cc1f7f39324b30972a6b823c464cc377549806a72809d8efc0f03"
                     }
                   ]
                 },
@@ -284,7 +284,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "dc6b98c7c1b854a7e6a208df7d74e6e4d065f18fde529836a52580b809d77307"
+                  "bytes": "e7db79ace5de1df762e0eb81212019b7a1b667d6f1fcfb36dae58bc6b71c5287"
                 }
               ]
             },
@@ -304,7 +304,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "dc6b98c7c1b854a7e6a208df7d74e6e4d065f18fde529836a52580b809d77307"
+                      "bytes": "e7db79ace5de1df762e0eb81212019b7a1b667d6f1fcfb36dae58bc6b71c5287"
                     }
                   ]
                 },
@@ -358,18 +358,6 @@
                         "key": {
                           "vec": [
                             {
-                              "symbol": "DefaultBootstrapCredits"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "u32": 10
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
                               "symbol": "DeploymentSeq"
                             }
                           ]
@@ -411,7 +399,7 @@
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]

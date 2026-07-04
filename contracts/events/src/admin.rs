@@ -38,7 +38,7 @@ const PENDING_UPGRADE_TTL_LEDGERS: u32 = 518_400;
 // Initial contract version. Written by __constructor and bumped on
 // apply_upgrade. Bump alongside any storage-layout or public-surface change
 // that warrants a migration entrypoint.
-pub const INITIAL_VERSION: &str = "0.2.0";
+pub const INITIAL_VERSION: &str = "1.1.0";
 
 // ============================================================
 // INITIALIZATION
@@ -52,11 +52,7 @@ pub fn initialize(
 ) {
     // Refuse double-init by checking the admin key in instance storage (the
     // new home for admin/config per the 2026-06 audit).
-    if env
-        .storage()
-        .instance()
-        .has(&crate::types::DataKey::Admin)
-    {
+    if env.storage().instance().has(&crate::types::DataKey::Admin) {
         panic_with_error!(env, Error::AlreadyInitialized);
     }
     if fee_bps > MAX_FEE_BPS {
@@ -221,7 +217,7 @@ pub fn propose_upgrade(
     // soroban contracterror 50-variant cap (a dedicated InvalidVersion
     // would push us over). Off-chain monitors should treat InvalidPillar
     // on propose_upgrade as "bad version label."
-    if new_version.len() == 0 {
+    if new_version.is_empty() {
         return Err(Error::InvalidPillar);
     }
     let now = env.ledger().sequence();
@@ -347,10 +343,11 @@ pub fn migrate(env: &Env) -> Result<(), Error> {
     // helpers and call from inside the body.
     // ============================================================
 
-    // No-op for the initial 0.2.0 deploy. __constructor populates storage
-    // in the current shape, so admin can call migrate() once just to stamp
-    // the marker and unlock the audit trail (the Migrated event signals
-    // off-chain runbooks that the post-upgrade cleanup ran).
+    // No-op for the 1.0.0 -> 1.1.0 credit-removal upgrade: the contracts hold
+    // no events yet, so there are no EventRecord rows to rewrite. __constructor
+    // populates storage in the current shape, so admin can call migrate() once
+    // just to stamp the marker and unlock the audit trail (the Migrated event
+    // signals off-chain runbooks that the post-upgrade cleanup ran).
 
     storage::set_migrated_to_version(env, &current);
     storage::touch_instance(env);
@@ -366,8 +363,7 @@ pub fn migrate(env: &Env) -> Result<(), Error> {
 // READS
 // ============================================================
 pub fn get_admin(env: &Env) -> Address {
-    storage::get_admin(env)
-        .unwrap_or_else(|_| panic_with_error!(env, Error::NotInitialized))
+    storage::get_admin(env).unwrap_or_else(|_| panic_with_error!(env, Error::NotInitialized))
 }
 
 pub fn get_fee_bps(env: &Env) -> u32 {
@@ -387,8 +383,7 @@ pub fn is_paused(env: &Env) -> bool {
 }
 
 pub fn get_version(env: &Env) -> String {
-    storage::get_version(env)
-        .unwrap_or_else(|| panic_with_error!(env, Error::NotInitialized))
+    storage::get_version(env).unwrap_or_else(|| panic_with_error!(env, Error::NotInitialized))
 }
 
 pub fn get_pending_upgrade(env: &Env) -> Option<PendingUpgrade> {

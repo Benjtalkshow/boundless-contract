@@ -16,7 +16,7 @@
               "function_name": "propose_upgrade",
               "args": [
                 {
-                  "bytes": "6adfc630eb4fb7c24943ec2f42e76016b054a5eefdb30a35600b258233cb9023"
+                  "bytes": "5908497b923c428973bb376b1db3d0d74278175480429e367e360aa41a5053ed"
                 },
                 {
                   "string": "0.3.0"
@@ -112,18 +112,6 @@
                         "key": {
                           "vec": [
                             {
-                              "symbol": "DefaultBootstrapCredits"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "u32": 10
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
                               "symbol": "DeploymentSeq"
                             }
                           ]
@@ -191,7 +179,7 @@
                                 "symbol": "wasm_hash"
                               },
                               "val": {
-                                "bytes": "6adfc630eb4fb7c24943ec2f42e76016b054a5eefdb30a35600b258233cb9023"
+                                "bytes": "5908497b923c428973bb376b1db3d0d74278175480429e367e360aa41a5053ed"
                               }
                             }
                           ]
@@ -206,7 +194,7 @@
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]

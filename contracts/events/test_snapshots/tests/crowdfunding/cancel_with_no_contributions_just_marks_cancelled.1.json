@@ -99,14 +99,6 @@
                   "map": [
                     {
                       "key": {
-                        "symbol": "application_credit_cost"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
-                    {
-                      "key": {
                         "symbol": "content_uri"
                       },
                       "val": {
@@ -212,7 +204,7 @@
                   ]
                 },
                 {
-                  "bytes": "205a272f82aea9b34b3d1337434eac76624d8d552bf49fdf3b30ba0d16e72c30"
+                  "bytes": "6c5cb257a8b79bf7a3c52babace044fcacb0bd47f1d8d2c781e7c0ffe2904dac"
                 }
               ]
             }
@@ -234,7 +226,7 @@
                   "u64": "1"
                 },
                 {
-                  "bytes": "dbcc9639206d04ab2bafb3d113a929fc1437aaa95fef9d1f31b2bdd24f1fac42"
+                  "bytes": "5c8360b4dc72030f88c55966a349d7c320012959e5b8c7da8878c530154ec777"
                 }
               ]
             }
@@ -389,18 +381,6 @@
                         "key": {
                           "vec": [
                             {
-                              "symbol": "DefaultBootstrapCredits"
-                            }
-                          ]
-                        },
-                        "val": {
-                          "u32": 10
-                        }
-                      },
-                      {
-                        "key": {
-                          "vec": [
-                            {
                               "symbol": "DeploymentSeq"
                             }
                           ]
@@ -442,7 +422,7 @@
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]
@@ -525,14 +505,6 @@
                 "durability": "persistent",
                 "val": {
                   "map": [
-                    {
-                      "key": {
-                        "symbol": "application_credit_cost"
-                      },
-                      "val": {
-                        "u32": 0
-                      }
-                    },
                     {
                       "key": {
                         "symbol": "content_uri"
@@ -819,7 +791,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "205a272f82aea9b34b3d1337434eac76624d8d552bf49fdf3b30ba0d16e72c30"
+                  "bytes": "5c8360b4dc72030f88c55966a349d7c320012959e5b8c7da8878c530154ec777"
                 }
               ]
             },
@@ -839,7 +811,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "205a272f82aea9b34b3d1337434eac76624d8d552bf49fdf3b30ba0d16e72c30"
+                      "bytes": "5c8360b4dc72030f88c55966a349d7c320012959e5b8c7da8878c530154ec777"
                     }
                   ]
                 },
@@ -864,7 +836,7 @@
                   "symbol": "OpSeen"
                 },
                 {
-                  "bytes": "dbcc9639206d04ab2bafb3d113a929fc1437aaa95fef9d1f31b2bdd24f1fac42"
+                  "bytes": "6c5cb257a8b79bf7a3c52babace044fcacb0bd47f1d8d2c781e7c0ffe2904dac"
                 }
               ]
             },
@@ -884,7 +856,7 @@
                       "symbol": "OpSeen"
                     },
                     {
-                      "bytes": "dbcc9639206d04ab2bafb3d113a929fc1437aaa95fef9d1f31b2bdd24f1fac42"
+                      "bytes": "6c5cb257a8b79bf7a3c52babace044fcacb0bd47f1d8d2c781e7c0ffe2904dac"
                     }
                   ]
                 },
@@ -1025,12 +997,54 @@
                         "key": {
                           "vec": [
                             {
+                              "symbol": "SupportedTokenAt"
+                            },
+                            {
+                              "u32": 0
+                            }
+                          ]
+                        },
+                        "val": {
+                          "address": "CDS3FDGQ4JA2V3F26Y4BMWWJEC5TT26RJBN7KIQKUMVO2MAOCMDTSZ7A"
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "SupportedTokenCount"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "u32": 1
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
+                              "symbol": "SupportedTokenSlot"
+                            },
+                            {
+                              "address": "CDS3FDGQ4JA2V3F26Y4BMWWJEC5TT26RJBN7KIQKUMVO2MAOCMDTSZ7A"
+                            }
+                          ]
+                        },
+                        "val": {
+                          "u32": 1
+                        }
+                      },
+                      {
+                        "key": {
+                          "vec": [
+                            {
                               "symbol": "Version"
                             }
                           ]
                         },
                         "val": {
-                          "string": "0.2.0"
+                          "string": "1.1.0"
                         }
                       }
                     ]

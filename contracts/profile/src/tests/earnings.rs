@@ -31,7 +31,7 @@ fn token(env: &crate::Env) -> Address {
 
 #[test]
 fn register_earnings_succeeds() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
@@ -45,15 +45,18 @@ fn register_earnings_succeeds() {
 
 #[test]
 fn register_earnings_accumulates() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
     let t = token(&ctx.env);
 
-    ctx.client.register_earnings(&u, &t, &50_i128, &BytesN::random(&ctx.env));
-    ctx.client.register_earnings(&u, &t, &30_i128, &BytesN::random(&ctx.env));
-    ctx.client.register_earnings(&u, &t, &20_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t, &50_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t, &30_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t, &20_i128, &BytesN::random(&ctx.env));
 
     assert_eq!(ctx.client.get_earnings(&u, &t), 100);
 }
@@ -64,15 +67,17 @@ fn register_earnings_accumulates() {
 
 #[test]
 fn register_earnings_multiple_tokens() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
     let t1 = token(&ctx.env);
     let t2 = token(&ctx.env);
 
-    ctx.client.register_earnings(&u, &t1, &100_i128, &BytesN::random(&ctx.env));
-    ctx.client.register_earnings(&u, &t2, &200_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t1, &100_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t2, &200_i128, &BytesN::random(&ctx.env));
 
     assert_eq!(ctx.client.get_earnings(&u, &t1), 100);
     assert_eq!(ctx.client.get_earnings(&u, &t2), 200);
@@ -80,15 +85,17 @@ fn register_earnings_multiple_tokens() {
 
 #[test]
 fn register_earnings_multiple_users() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u1 = user(&ctx.env);
     let u2 = user(&ctx.env);
     let t = token(&ctx.env);
 
-    ctx.client.register_earnings(&u1, &t, &100_i128, &BytesN::random(&ctx.env));
-    ctx.client.register_earnings(&u2, &t, &200_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u1, &t, &100_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u2, &t, &200_i128, &BytesN::random(&ctx.env));
 
     assert_eq!(ctx.client.get_earnings(&u1, &t), 100);
     assert_eq!(ctx.client.get_earnings(&u2, &t), 200);
@@ -100,7 +107,7 @@ fn register_earnings_multiple_users() {
 
 #[test]
 fn register_earnings_rejects_zero() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
@@ -117,7 +124,7 @@ fn register_earnings_rejects_zero() {
 
 #[test]
 fn register_earnings_rejects_negative() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
@@ -138,7 +145,7 @@ fn register_earnings_rejects_negative() {
 
 #[test]
 fn register_earnings_reverts_no_events_contract() {
-    let ctx = setup(10);
+    let ctx = setup();
     let u = user(&ctx.env);
     let t = token(&ctx.env);
 
@@ -157,7 +164,7 @@ fn register_earnings_reverts_no_events_contract() {
 
 #[test]
 fn register_earnings_reverts_when_paused() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
     ctx.client.pause();
 
@@ -179,7 +186,7 @@ fn register_earnings_reverts_when_paused() {
 
 #[test]
 fn register_earnings_rejects_duplicate_op_id() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
@@ -209,23 +216,20 @@ fn register_earnings_rejects_duplicate_op_id() {
 
 #[test]
 fn register_earnings_saturating_add() {
-    let ctx = setup(10);
+    let ctx = setup();
     ctx.client.set_events_contract(&events_addr(&ctx.env));
 
     let u = user(&ctx.env);
     let t = token(&ctx.env);
 
     // Push to i128::MAX - 1.
-    ctx.client.register_earnings(
-        &u,
-        &t,
-        &(i128::MAX - 1),
-        &BytesN::random(&ctx.env),
-    );
+    ctx.client
+        .register_earnings(&u, &t, &(i128::MAX - 1), &BytesN::random(&ctx.env));
     assert_eq!(ctx.client.get_earnings(&u, &t), i128::MAX - 1);
 
     // Add 100 — should saturate at i128::MAX, not overflow.
-    ctx.client.register_earnings(&u, &t, &100_i128, &BytesN::random(&ctx.env));
+    ctx.client
+        .register_earnings(&u, &t, &100_i128, &BytesN::random(&ctx.env));
     assert_eq!(ctx.client.get_earnings(&u, &t), i128::MAX);
 }
 
@@ -237,10 +241,7 @@ fn register_earnings_saturating_add() {
 fn register_earnings_auth_rejection() {
     let env = soroban_sdk::Env::default();
     let admin = Address::generate(&env);
-    let contract_id = env.register(
-        crate::ProfileContract,
-        (admin.clone(), 10u32),
-    );
+    let contract_id = env.register(crate::ProfileContract, (admin.clone(),));
     let client = crate::ProfileContractClient::new(&env, &contract_id);
 
     // Set events contract directly in storage to bypass admin auth.
