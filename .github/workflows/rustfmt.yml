@@ -5,19 +5,12 @@ on:
     branches:
       - main
       - develop
+      - testnet
   pull_request:
     branches:
       - main
       - develop
       - testnet
-  workflow_call:
-    secrets:
-      STELLAR_SECRET_KEY:
-        required: true
-      SOROBAN_SECRET_KEY:
-        required: true
-      CONTRACT_ID:
-        required: false
 
 permissions:
   contents: read
@@ -41,14 +34,3 @@ jobs:
 
       - name: Run rustfmt
         run: cargo fmt -- --check
-
-  deploy:
-    needs: rustfmt
-    # Never deploy from a PR run. Deploy only on direct pushes (the workflow
-    # is chained here for the push-to-branch CD path, not for PR checks).
-    if: github.event_name == 'push'
-    uses: ./.github/workflows/contract-deploy.yml
-    secrets:
-      STELLAR_SECRET_KEY: ${{ secrets.STELLAR_SECRET_KEY }}
-      SOROBAN_SECRET_KEY: ${{ secrets.SOROBAN_SECRET_KEY }}
-      CONTRACT_ID: ${{ secrets.CONTRACT_ID }}
