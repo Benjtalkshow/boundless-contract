@@ -13,8 +13,12 @@ pub enum Error {
 
     Unauthorized = 10,
     NotAdmin = 11,
-    PendingAdminMismatch = 12,
-    PendingAdminExpired = 13,
+    // Shared by both two-step rotations (admin and event manager): no pending
+    // proposal / target mismatch (12) and pending proposal expired (13). The
+    // enum is at the 50-case XDR cap, so the manager flow reuses these rather
+    // than adding variants.
+    PendingRotationMismatch = 12,
+    PendingRotationExpired = 13,
 
     TokenNotSupported = 20,
     FeeAccountMissingTrustline = 21,

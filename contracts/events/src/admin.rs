@@ -79,12 +79,12 @@ pub fn set_admin(env: &Env, new_admin: Address) -> Result<(), Error> {
 }
 
 pub fn accept_admin(env: &Env) -> Result<(), Error> {
-    let pending = storage::get_pending_admin(env).ok_or(Error::PendingAdminMismatch)?;
+    let pending = storage::get_pending_admin(env).ok_or(Error::PendingRotationMismatch)?;
 
     if env.ledger().sequence() > pending.expires_at_ledger {
         storage::clear_pending_admin(env);
         storage::touch_instance(env);
-        return Err(Error::PendingAdminExpired);
+        return Err(Error::PendingRotationExpired);
     }
 
     pending.target.require_auth();

@@ -201,6 +201,9 @@ pub enum DataKey {
     EventUnclaimedPrizes(u64),
     EventPrizeBaseEscrow(u64),
     EventPrizeClaimExpiry(u64),
+
+    // Appended for two-step manager rotation to preserve key discriminants.
+    PendingManager(u64),
 }
 
 // ============================================================
@@ -220,6 +223,16 @@ pub struct PrizeAward {
 #[contracttype]
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct PendingAdmin {
+    pub target: Address,
+    pub expires_at_ledger: u32,
+}
+
+// ============================================================
+// PENDING MANAGER payload (target + expiry ledger)
+// ============================================================
+#[contracttype]
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct PendingManager {
     pub target: Address,
     pub expires_at_ledger: u32,
 }
