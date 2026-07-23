@@ -55,6 +55,9 @@ pub enum Error {
 
     OpAlreadySeen = 60,
 
+    // Also returned by append_submission's cap check — the enum is at
+    // the 50-case XDR cap, so the hackathon submission cap reuses this
+    // rather than adding a variant.
     TooManyContributors = 61,
 
     CancellationNotStarted = 62,
